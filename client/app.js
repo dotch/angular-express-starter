@@ -2,7 +2,7 @@ angular.module('myApp', [
   'ngResource',
   'ngMessages',
   'ui.router',
-  'mgcrea.ngStrap',
+  'ngMaterial',
   'satellizer',
 
   'myApp.signup',

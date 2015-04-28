@@ -1,5 +1,5 @@
 angular.module('myApp.signup', [])
-  .controller('SignupController', function($scope, $alert, $auth) {
+  .controller('SignupController', function($scope, $mdToast, $auth) {
     $scope.signup = function() {
       $auth.signup({
         displayName: $scope.displayName,
@@ -8,20 +8,20 @@ angular.module('myApp.signup', [])
       }).catch(function(response) {
         if (typeof response.data.message === 'object') {
           angular.forEach(response.data.message, function(message) {
-            $alert({
-              content: message[0],
-              animation: 'fadeZoomFadeDown',
-              type: 'material',
-              duration: 3
-            });
+            $mdToast.show(
+              $mdToast.simple()
+                .content(message[0])
+                .position('bottom right')
+                .hideDelay(3000)
+            );
           });
         } else {
-          $alert({
-            content: response.data.message,
-            animation: 'fadeZoomFadeDown',
-            type: 'material',
-            duration: 3
-          });
+          $mdToast.show(
+            $mdToast.simple()
+              .content(response.data.message)
+              .position('bottom right')
+              .hideDelay(3000)
+          );
         }
       });
     };

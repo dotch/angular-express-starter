@@ -1,5 +1,5 @@
 angular.module('myApp.profile', [])
-  .controller('ProfileController', function($scope, $auth, $alert, Account) {
+  .controller('ProfileController', function($scope, $auth, $mdToast, Account) {
 
     /**
      * Get user's profile information.
@@ -10,12 +10,7 @@ angular.module('myApp.profile', [])
           $scope.user = data;
         })
         .error(function(error) {
-          $alert({
-            content: error.message,
-            animation: 'fadeZoomFadeDown',
-            type: 'material',
-            duration: 3
-          });
+          showDefaultToast(error.message);
         });
     };
 
@@ -27,12 +22,7 @@ angular.module('myApp.profile', [])
         displayName: $scope.user.displayName,
         email: $scope.user.email
       }).then(function() {
-        $alert({
-          content: 'Profile has been updated',
-          animation: 'fadeZoomFadeDown',
-          type: 'material',
-          duration: 3
-        });
+        showDefaultToast('Profile has been updated');
       });
     };
 
@@ -42,23 +32,13 @@ angular.module('myApp.profile', [])
     $scope.link = function(provider) {
       $auth.link(provider)
         .then(function() {
-          $alert({
-            content: 'You have successfully linked ' + provider + ' account',
-            animation: 'fadeZoomFadeDown',
-            type: 'material',
-            duration: 3
-          });
+          showDefaultToast('You have successfully linked ' + provider + ' account');
         })
         .then(function() {
           $scope.getProfile();
         })
         .catch(function(response) {
-          $alert({
-            content: response.data.message,
-            animation: 'fadeZoomFadeDown',
-            type: 'material',
-            duration: 3
-          });
+          showDefaultToast(response.data.message);
         });
     };
 
@@ -68,25 +48,24 @@ angular.module('myApp.profile', [])
     $scope.unlink = function(provider) {
       $auth.unlink(provider)
         .then(function() {
-          $alert({
-            content: 'You have successfully unlinked ' + provider + ' account',
-            animation: 'fadeZoomFadeDown',
-            type: 'material',
-            duration: 3
-          });
+          showDefaultToast('You have successfully unlinked ' + provider + ' account');
         })
         .then(function() {
           $scope.getProfile();
         })
         .catch(function(response) {
-          $alert({
-            content: response.data ? response.data.message : 'Could not unlink ' + provider + ' account',
-            animation: 'fadeZoomFadeDown',
-            type: 'material',
-            duration: 3
-          });
+          showDefaultToast(response.data ? response.data.message : 'Could not unlink ' + provider + ' account');
         });
     };
+
+    function showDefaultToast(message) {
+      $mdToast.show(
+        $mdToast.simple()
+          .content(message)
+          .position('bottom right')
+          .hideDelay(3000)
+      );
+    }
 
     $scope.getProfile();
 
