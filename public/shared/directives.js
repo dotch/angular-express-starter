@@ -1,9 +1,25 @@
-angular.module('MyApp')
+angular.module('myApp.directives', [])
+  .directive('passwordMatch', function() {
+    return {
+      require: 'ngModel',
+      scope: {
+        otherModelValue: '=passwordMatch'
+      },
+      link: function(scope, element, attributes, ngModel) {
+        ngModel.$validators.compareTo = function(modelValue) {
+          return modelValue === scope.otherModelValue;
+        };
+        scope.$watch('otherModelValue', function() {
+          ngModel.$validate();
+        });
+      }
+    };
+  })
   .directive('passwordStrength', function() {
     return {
       restrict: 'A',
       require: 'ngModel',
-      link: function(scope, element, attrs, ngModel) {
+      link: function (scope, element, attrs, ngModel) {
         var indicator = element.children();
         var dots = Array.prototype.slice.call(indicator.children());
         var weakest = dots.slice(-1)[0];
@@ -13,26 +29,26 @@ angular.module('MyApp')
 
         element.after(indicator);
 
-        element.bind('keyup', function() {
+        element.bind('keyup', function () {
           var matches = {
-                positive: {},
-                negative: {}
-              },
-              counts = {
-                positive: {},
-                negative: {}
-              },
-              tmp,
-              strength = 0,
-              letters = 'abcdefghijklmnopqrstuvwxyz',
-              numbers = '01234567890',
-              symbols = '\\!@#$%&/()=?¿',
-              strValue;
+              positive: {},
+              negative: {}
+            },
+            counts = {
+              positive: {},
+              negative: {}
+            },
+            tmp,
+            strength = 0,
+            letters = 'abcdefghijklmnopqrstuvwxyz',
+            numbers = '01234567890',
+            symbols = '\\!@#$%&/()=?¿',
+            strValue;
 
-          angular.forEach(dots, function(el) {
+          angular.forEach(dots, function (el) {
             el.style.backgroundColor = '#ebeef1';
           });
-          
+
           if (ngModel.$viewValue) {
             // Increase strength level
             matches.positive.lower = ngModel.$viewValue.match(/[a-z]/g);
@@ -94,15 +110,15 @@ angular.module('MyApp')
             strength = Math.max(0, Math.min(100, Math.round(strength)));
 
             if (strength > 85) {
-              angular.forEach(strongest, function(el) {
+              angular.forEach(strongest, function (el) {
                 el.style.backgroundColor = '#008cdd';
               });
             } else if (strength > 65) {
-              angular.forEach(strong, function(el) {
+              angular.forEach(strong, function (el) {
                 el.style.backgroundColor = '#6ead09';
               });
             } else if (strength > 30) {
-              angular.forEach(weak, function(el) {
+              angular.forEach(weak, function (el) {
                 el.style.backgroundColor = '#e09115';
               });
             } else {
@@ -114,3 +130,4 @@ angular.module('MyApp')
       template: '<span class="password-strength-indicator"><span></span><span></span><span></span><span></span></span>'
     };
   });
+

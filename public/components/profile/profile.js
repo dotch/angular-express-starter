@@ -1,5 +1,5 @@
-angular.module('MyApp')
-  .controller('ProfileCtrl', function($scope, $auth, $alert, Account) {
+angular.module('myApp.profile', [])
+  .controller('ProfileController', function($scope, $auth, $alert, Account) {
 
     /**
      * Get user's profile information.
@@ -18,7 +18,6 @@ angular.module('MyApp')
           });
         });
     };
-
 
     /**
      * Update user's profile information.

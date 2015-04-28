@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="MyApp">
+<html ng-app="myApp">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +10,7 @@
   <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
   <link href="//cdn.jsdelivr.net/animatecss/3.2.0/animate.css" rel="stylesheet">
-  <link href="/stylesheets/styles.css" rel="stylesheet">
+  <link href="stylesheets/styles.css" rel="stylesheet">
 </head>
 <body>
 <div ng-controller="NavbarCtrl" class="navbar navbar-default navbar-static-top">
@@ -43,14 +43,14 @@
 <script src="bower_components/satellizer/satellizer.js"></script>
 
 <!-- Application Code -->
-<script src="/app.js"></script>
-<script src="/directives/passwordStrength.js"></script>
-<script src="/directives/passwordMatch.js"></script>
-<script src="/controllers/login.js"></script>
-<script src="/controllers/signup.js"></script>
-<script src="/controllers/logout.js"></script>
-<script src="/controllers/profile.js"></script>
-<script src="/controllers/navbar.js"></script>
-<script src="/services/account.js"></script>
+<script src="app.js"></script>
+<script src="shared/directives.js"></script>
+<script src="components/home/home.js"></script>
+<script src="components/login/login.js"></script>
+<script src="components/signup/signup.js"></script>
+<script src="components/logout/logout.js"></script>
+<script src="components/profile/profile.js"></script>
+<script src="components/navbar/navbar.js"></script>
+<script src="shared/services.js"></script>
 </body>
 </html>

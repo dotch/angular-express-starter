@@ -1,29 +1,45 @@
-angular.module('MyApp', ['ngResource', 'ngMessages', 'ui.router', 'mgcrea.ngStrap', 'satellizer'])
+angular.module('myApp', [
+  'ngResource',
+  'ngMessages',
+  'ui.router',
+  'mgcrea.ngStrap',
+  'satellizer',
+
+  'myApp.signup',
+  'myApp.profile',
+  'myApp.login',
+  'myApp.logout',
+  'myApp.home',
+
+  'myApp.services',
+  'myApp.directives'
+])
   .config(function($stateProvider, $urlRouterProvider, $authProvider) {
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'partials/home.html'
+        templateUrl: 'components/home/home.html',
+        controller: 'HomeController'
       })
       .state('login', {
         url: '/login',
-        templateUrl: 'partials/login.html',
-        controller: 'LoginCtrl'
+        templateUrl: 'components/login/login.html',
+        controller: 'LoginController'
       })
       .state('signup', {
         url: '/signup',
-        templateUrl: 'partials/signup.html',
-        controller: 'SignupCtrl'
+        templateUrl: 'components/signup/signup.html',
+        controller: 'SignupController'
       })
       .state('logout', {
         url: '/logout',
         template: null,
-        controller: 'LogoutCtrl'
+        controller: 'LogoutController'
       })
       .state('profile', {
         url: '/profile',
-        templateUrl: 'partials/profile.html',
-        controller: 'ProfileCtrl',
+        templateUrl: 'components/profile/profile.html',
+        controller: 'ProfileController',
         resolve: {
           authenticated: function($q, $location, $auth) {
             var deferred = $q.defer();

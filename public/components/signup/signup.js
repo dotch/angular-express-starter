@@ -1,5 +1,5 @@
-angular.module('MyApp')
-  .controller('SignupCtrl', function($scope, $alert, $auth) {
+angular.module('myApp.signup', [])
+  .controller('SignupController', function($scope, $alert, $auth) {
     $scope.signup = function() {
       $auth.signup({
         displayName: $scope.displayName,

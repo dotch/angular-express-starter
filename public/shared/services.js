@@ -1,4 +1,4 @@
-angular.module('MyApp')
+angular.module('myApp.services', [])
   .factory('Account', function($http) {
     return {
       getProfile: function() {
