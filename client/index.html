@@ -11,7 +11,7 @@
     <link href="stylesheets/styles.css" rel="stylesheet">
   </head>
 
-  <body>
+  <body layout="column">
     <md-toolbar ng-controller="NavbarCtrl" class="md-whiteframe-z2">
       <div class="md-toolbar-tools" layout-margin layout-padding>
         <a href="/#/" md-button>MEAN Essential</a>
@@ -23,8 +23,9 @@
         <a href="/#/logout" md-button ng-if="isAuthenticated()">Logout</a>
       </div>
     </md-toolbar>
-
-    <div ui-view></div>
+    <md-content>
+      <div ui-view></div>
+    </md-content>
 
     <!-- Third-party Libraries -->
     <script src="bower_components/angular/angular.js"></script>

@@ -3,6 +3,12 @@
   margin: auto;
 }
 
+.mute-toolbar {
+  background: #f2f2f2 !important;
+  color: #616161 !important;
+  border-bottom: 1px solid #e5e5e5;
+}
+
 .signup-or-separator {
   position: relative;
   height: 34px;
