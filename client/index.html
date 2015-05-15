@@ -1,56 +1,52 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Satellizer</title>
-  <link href="favicon.png" rel="shortcut icon">
-  <link href="//fonts.googleapis.com/css?family=Roboto|Montserrat:400,700|Open+Sans:400,300,600" rel="stylesheet">
-  <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
-  <link href="stylesheets/styles.css" rel="stylesheet">
-</head>
-<body>
-<div ng-controller="NavbarCtrl" class="navbar navbar-default navbar-static-top">
-  <div class="navbar-header">
-    <a class="navbar-brand" href="/">Satellizer</a>
-  </div>
-  <ul class="nav navbar-nav">
-    <li><a href="/#/">Home</a></li>
-    <li ng-if="isAuthenticated()"><a href="/#/profile">Profile</a></li>
-  </ul>
-  <ul ng-if="!isAuthenticated()" class="nav navbar-nav pull-right">
-    <li><a href="/#/login">Login</a></li>
-    <li><a href="/#/signup">Sign up</a></li>
-  </ul>
-  <ul ng-if="isAuthenticated()" class="nav navbar-nav pull-right">
-    <li><a href="/#/logout">Logout</a></li>
-  </ul>
-</div>
 
-<div ui-view></div>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MEAN Essential</title>
+    <link href="favicon.png" rel="shortcut icon">
+    <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+    <link href="stylesheets/styles.css" rel="stylesheet">
+  </head>
 
-<!-- Third-party Libraries -->
-<script src="bower_components/angular/angular.js"></script>
-<script src="bower_components/angular-messages/angular-messages.js"></script>
-<script src="bower_components/angular-resource/angular-resource.js"></script>
-<script src="bower_components/angular-animate/angular-animate.js"></script>
-<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-<script src="bower_components/angular-aria/angular-aria.js"></script>
-<script src="bower_components/angular-material/angular-material.js"></script>
+  <body>
+    <md-toolbar ng-controller="NavbarCtrl" class="md-whiteframe-z2">
+      <div class="md-toolbar-tools" layout-margin layout-padding>
+        <a href="/#/" md-button>MEAN Essential</a>
+        <div flex>
+          <a href="/#/profile" md-button ng-if="isAuthenticated()">Profile</a>
+        </div>
+        <a href="/#/login" md-button ng-if="!isAuthenticated()">Login</a>
+        <a href="/#/signup" md-button ng-if="!isAuthenticated()">Sign up</a>
+        <a href="/#/logout" md-button ng-if="isAuthenticated()">Logout</a>
+      </div>
+    </md-toolbar>
 
-<script src="bower_components/satellizer/satellizer.js"></script>
+    <div ui-view></div>
 
-<!-- Application Code -->
-<script src="app.js"></script>
-<script src="shared/directives.js"></script>
-<script src="components/home/home.js"></script>
-<script src="components/login/login.js"></script>
-<script src="components/signup/signup.js"></script>
-<script src="components/logout/logout.js"></script>
-<script src="components/profile/profile.js"></script>
-<script src="components/navbar/navbar.js"></script>
-<script src="shared/services.js"></script>
-</body>
+    <!-- Third-party Libraries -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/satellizer/satellizer.js"></script>
+
+    <!-- Application Code -->
+    <script src="app.js"></script>
+    <script src="shared/directives.js"></script>
+    <script src="components/home/home.js"></script>
+    <script src="components/login/login.js"></script>
+    <script src="components/signup/signup.js"></script>
+    <script src="components/logout/logout.js"></script>
+    <script src="components/profile/profile.js"></script>
+    <script src="components/navbar/navbar.js"></script>
+    <script src="shared/services.js"></script>
+
+  </body>
+
 </html>
