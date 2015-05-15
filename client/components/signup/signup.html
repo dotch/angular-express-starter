@@ -5,43 +5,74 @@
         <h3>Sign up</h3>
       </div>
     </md-toolbar>
-    <md-content layout-padding>
-      <form method="post" ng-submit="signup()" name="signupForm" layout="column">
-        <md-input-container>
-          <label>Name</label>
-          <input ng-model="displayName" name="displayName" required autofocus>
-          <div ng-messages="signupForm.displayName.$error" ng-show="signupForm.displayName.$touched || signupForm.$submitted">
-            <div ng-message="required">You must enter your name.</div>
-          </div>
-        </md-input-container>
-        <md-input-container>
-          <label>Email</label>
-          <input ng-model="email" name="email" type="email" ng-pattern="/^[A-z]+[a-z0-9._]+@[a-z]+.[a-z.]{2,5}$/" required>
-          <div ng-messages="signupForm.email.$error" ng-show="signupForm.email.$touched || signupForm.$submitted">
-            <div ng-message="required">Your email adress is required.</div>
-            <div ng-message="pattern">Your email adress is invalid.</div>
-          </div>
-        </md-input-container>
-        <md-input-container>
-          <label>Password</label>
-          <input password-strength ng-model="password" name="password" type="password" required>
-          <div ng-messages="signupForm.password.$error" ng-show="signupForm.password.$touched || signupForm.$submitted">
-            <div ng-message="required">Password is required.</div>
-          </div>
-        </md-input-container>
-        <md-input-container>
-          <label>Confirm Password</label>
-          <input password-match="password" ng-model="confirmPassword" name="confirmPassword" type="password" required>
-          <div ng-messages="signupForm.confirmPassword.$error" ng-show="signupForm.confirmPassword.$touched || signupForm.$submitted">
-            <div ng-message="compareTo">Password must match.</div>
-            <div ng-message="required">Password confirmation is required.</div>
-          </div>
-        </md-input-container>
-        <md-button type="submit" ng-disabled="signupForm.$invalid" class="md-primary">Sign up</md-button>
-        <div layout layout-padding layout-align="center center">
-          <span>Already have an account? <a href="/#/login">Log in now</a></span>
-        </div>
-      </form>
+    <md-content layout="column" layout-gt-sm="row" layout-padding>
+      <div layout="column" flex>
+        <button class="md-button btn-facebook" ng-click="authenticate('facebook')">
+          <i class="ion-social-facebook"></i> Sign up with Facebook
+        </button>
+        <button class="md-button btn-google-plus" ng-click="authenticate('google')">
+          <span class="ion-social-googleplus"></span>Sign up with Google
+        </button>
+        <button class="md-button btn-linkedin" ng-click="authenticate('linkedin')">
+          <i class="ion-social-linkedin"></i> Sign up with LinkedIn
+        </button>
+        <button class="md-button btn-twitter" ng-click="authenticate('twitter')">
+          <i class="ion-social-twitter"></i> Sign up with Twitter
+        </button>
+        <button class="md-button btn-github" ng-click="authenticate('github')">
+          <i class="ion-social-github"></i> Sign up with GitHub
+        </button>
+        <button class="md-button btn-yahoo" ng-click="authenticate('yahoo')">
+          <i class="ion-social-yahoo"></i> Sign up with Yahoo
+        </button>
+        <button class="md-button btn-live" ng-click="authenticate('live')">
+          <i class="ion-social-windows"></i> Sign up with Windows Live
+        </button>
+      </div>
+      <div class="signup-seperator" layout="row" layout-gt-sm="column" layout-align="center center">
+        <div class="line" flex></div>
+        <div>OR</div>
+        <div class="line" flex></div>
+      </div>
+      <div flex layout="column" layout-padding layout-margin>
+        <form method="post" ng-submit="signup()" name="signupForm" layout="column">
+          <md-input-container>
+            <label>Name</label>
+            <input ng-model="displayName" name="displayName" required autofocus>
+            <div ng-messages="signupForm.displayName.$error" ng-show="signupForm.displayName.$touched || signupForm.$submitted">
+              <div ng-message="required">You must enter your name.</div>
+            </div>
+          </md-input-container>
+          <md-input-container>
+            <label>Email</label>
+            <input ng-model="email" name="email" type="email" ng-pattern="/^[A-z]+[a-z0-9._]+@[a-z]+.[a-z.]{2,5}$/" required>
+            <div ng-messages="signupForm.email.$error" ng-show="signupForm.email.$touched || signupForm.$submitted">
+              <div ng-message="required">Your email adress is required.</div>
+              <div ng-message="pattern">Your email adress is invalid.</div>
+            </div>
+          </md-input-container>
+          <md-input-container>
+            <label>Password</label>
+            <input password-strength ng-model="password" name="password" type="password" required>
+            <div ng-messages="signupForm.password.$error" ng-show="signupForm.password.$touched || signupForm.$submitted">
+              <div ng-message="required">Password is required.</div>
+            </div>
+          </md-input-container>
+          <md-input-container>
+            <label>Confirm Password</label>
+            <input password-match="password" ng-model="confirmPassword" name="confirmPassword" type="password" required>
+            <div ng-messages="signupForm.confirmPassword.$error" ng-show="signupForm.confirmPassword.$touched || signupForm.$submitted">
+              <div ng-message="compareTo">Password must match.</div>
+              <div ng-message="required">Password confirmation is required.</div>
+            </div>
+          </md-input-container>
+          <md-button type="submit" ng-disabled="signupForm.$invalid" class="md-primary">Sign up</md-button>
+        </form>
+      </div>
     </md-content>
+    <md-divider></md-divider>
+    <div layout layout-padding layout-align="center center">
+      <a href="/#/login">Already have an account?</a>
+    </div>
   </section>
 </md-content>
