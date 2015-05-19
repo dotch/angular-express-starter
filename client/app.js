@@ -58,15 +58,11 @@ angular.module('myApp', [
     $urlRouterProvider.otherwise('/');
 
     $authProvider.facebook({
-      clientId: '603122136500203'
+      clientId: '1446453645668626'
     });
 
     $authProvider.google({
-      clientId: '631036554609-v5hm2amv4pvico3asfi97f54sc51ji4o.apps.googleusercontent.com'
-    });
-    
-    $authProvider.twitter({
-      url: '/auth/twitter'
+      clientId: '154995491013-9vuhtdo8drlfjql5eiesd36vm8c82i00.apps.googleusercontent.com'
     });
 
   });

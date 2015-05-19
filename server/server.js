@@ -9,6 +9,7 @@ var config = require('./config');
 var auth = require('./auth/auth.service');
 var User = require('./api/user/user.model');
 
+mongoose.set('debug', true);
 mongoose.connect(config.MONGO_URI);
 mongoose.connection.on('error', function() {
   console.error('MongoDB Connection Error. Please make sure that MongoDB is running.');

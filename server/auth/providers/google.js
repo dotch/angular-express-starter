@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var jwt = require('jwt-simple');
-
+var request = require('request');
+var config = require('../../config');
 var auth = require('../auth.service');
 var User = require('../../api/user/user.model');
 
