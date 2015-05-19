@@ -23,4 +23,23 @@ router.put('/me', auth.ensureAuthenticated, function(req, res) {
   });
 });
 
+router.post('/me/password', auth.ensureAuthenticated, function(req, res) {
+  var oldPass = String(req.body.oldPassword);
+  var newPass = String(req.body.newPassword);
+  User.findById(req.user, '+password', function(err, user) {
+    if (!user) {
+      return res.status(400).send({ message: 'User not found' });
+    }
+    user.comparePassword(oldPass, function(err, isMatch) {
+      if (!isMatch) {
+        return res.status(401).send({ message: 'Wrong old password' });
+      }
+      user.password = newPass;
+      user.save(function(err) {
+        res.status(200).end();
+      });
+    });
+  });
+});
+
 module.exports = router;

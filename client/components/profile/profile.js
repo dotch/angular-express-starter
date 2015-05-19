@@ -27,6 +27,22 @@ angular.module('myApp.profile', [])
     };
 
     /**
+     * Update user's password.
+     */
+    $scope.changePassword = function() {
+      Account.changePassword({
+        oldPassword: $scope.oldPassword,
+        newPassword: $scope.newPassword
+      })
+      .then(function() {
+        showDefaultToast('Password has been changed');
+      })
+      .catch(function(response) {
+        showDefaultToast(response.data ? response.data.message : 'Could not change password');
+      });
+    };
+
+    /**
      * Link third-party provider.
      */
     $scope.link = function(provider) {

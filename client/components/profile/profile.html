@@ -28,6 +28,26 @@
   <section class="md-whiteframe-z1" flex>
     <md-toolbar class="mute-toolbar">
       <div class="md-toolbar-tools">
+        <h3>Change Password</h3>
+      </div>
+    </md-toolbar>
+    <md-content layout-padding>
+      <form method="post" ng-submit="changePassword()">
+        <md-input-container>
+          <label>Old Password</label>
+          <input ng-model="oldPassword">
+        </md-input-container>
+        <md-input-container>
+          <label>New Password</label>
+          <input ng-model="newPassword">
+        </md-input-container>
+        <md-button class="btn-primary">Change Password</md-button>
+      </form>
+    </md-content>
+  </section>
+  <section class="md-whiteframe-z1" flex>
+    <md-toolbar class="mute-toolbar">
+      <div class="md-toolbar-tools">
         <h3>Accounts</h3>
       </div>
     </md-toolbar>

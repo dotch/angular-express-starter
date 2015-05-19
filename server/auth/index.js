@@ -449,7 +449,7 @@ router.post('/yahoo', function(req, res) {
  | Login with Twitter
  |--------------------------------------------------------------------------
  */
-app.post('/auth/twitter', function(req, res) {
+router.post('/auth/twitter', function(req, res) {
   var requestTokenUrl = 'https://api.twitter.com/oauth/request_token';
   var accessTokenUrl = 'https://api.twitter.com/oauth/access_token';
   var profileUrl = 'https://api.twitter.com/1.1/users/show.json?screen_name=';
