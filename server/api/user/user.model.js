@@ -7,12 +7,7 @@ var userSchema = new mongoose.Schema({
   displayName: String,
   picture: String,
   facebook: String,
-  foursquare: String,
   google: String,
-  github: String,
-  linkedin: String,
-  live: String,
-  yahoo: String,
   twitter: String
 });
 
