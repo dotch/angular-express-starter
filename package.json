@@ -1,6 +1,5 @@
 {
-  "name": "satellizer-server-example",
-  "main": "server.js",
+  "name": "mean",
   "dependencies": {
     "async": "^0.9.0",
     "bcryptjs": "^2.1.0",
@@ -11,5 +10,9 @@
     "mongoose": "^4.0.3",
     "morgan": "^1.5.3",
     "request": "^2.55.0"
-  }
+  },
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "main": "server/server.js"
 }

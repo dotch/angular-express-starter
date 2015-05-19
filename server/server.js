@@ -16,7 +16,9 @@ mongoose.connection.on('error', function() {
 
 var app = express();
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000);
+app.set('ip', process.env.OPENSHIFT_NODEJS_IP || process.env.IP || undefined);
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -32,6 +34,6 @@ if (app.get('env') === 'production') {
 app.use(express.static(path.join(__dirname, '../client')));
 require('./routes')(app);
 
-app.listen(app.get('port'), function() {
+app.listen(app.get('port'), app.get('ip'), function() {
   console.log('Express server listening on port ' + app.get('port'));
 });
