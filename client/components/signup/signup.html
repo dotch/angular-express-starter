@@ -41,7 +41,7 @@
           </md-input-container>
           <md-input-container>
             <label>Password</label>
-            <input password-strength ng-model="password" name="password" type="password" required>
+            <input ng-model="password" name="password" type="password" required>
             <div ng-messages="signupForm.password.$error" ng-show="signupForm.password.$touched || signupForm.$submitted">
               <div ng-message="required">Password is required.</div>
             </div>

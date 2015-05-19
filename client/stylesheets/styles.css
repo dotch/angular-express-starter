@@ -17,23 +17,6 @@
   border: 1px solid #dce0e0;
 }
 
-.password-strength-indicator {
-  position: absolute;
-  top: 10px;
-  right: 0;
-  width: 5px;
-  padding: 0 15px;
-}
-
-.password-strength-indicator span {
-  display: block;
-  width: 5px;
-  height: 5px;
-  margin-bottom: 2px;
-  background: #ebeef1;
-  border-radius: 5px;
-}
-
 [class^='ion-'] {
   font-size: 1.2em;
 }
