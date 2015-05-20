@@ -13,13 +13,10 @@ Work in progress, far from being ready.
 - [x] Satellizer for authentication
 - [x] Angular Material for Layout and UI components
 
+## Demo
+[check it live](https://nodejs-dotch.rhcloud.com/#/)
 
 TODO:
-
-# Authentication Flow
-
 * E-Mail is the Basis for authentication. E-Mails have to be unique.
-* Signup with FB / Google should not create a new Account when the email is already used. It should also not automatically link the accounts. It should prompt the user to sign-in.
-* Unlinking your only authentication method should not be possible.
-* adding a password to a FB / Google created account should be possible.
-* profile changes should require the old password, except when the account has been created with fb / google and does not have a password.
+* Signup with FB / Google should not create a new Account when the email is already used.
+  It should also not automatically link the accounts. It should prompt the user to sign-in.
