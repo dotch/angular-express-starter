@@ -1,10 +1,9 @@
 # Angular Express Starter
 
-A simple yet full-featured starting point for Angular+Express apps.
+A simple yet full-featured starting point for Angular+Express applications.
 
 ## Features
-
-### Authentication 
+* JSON Web Token based Authentication
 * Local Authentication using Email and Password
 * OAuth 2.0 Authentication via Facebook and Google
 * Account Management:
@@ -12,12 +11,8 @@ A simple yet full-featured starting point for Angular+Express apps.
     * Change profile details
     * Link local and OAuth strategies to one account
     * Delete Account
-
-### Structure
-* Simple project structure
-
-### Design
 * Material Design using Angular Material
+* Simple project structure
 
 ## Technologies used
 * **Mongo DB** - NoSQL Database
@@ -44,8 +39,11 @@ bower install
 npm start
 ```
 
+### Set up API-Keys
+...
+
 ### TODO:
 * [ ] use nodemailer
 * [ ] implement account deletion
 * [ ] switch to component router
-* [ ] introduce gulp when necessary
+* [ ] introduce gulp when necessary or another build process
