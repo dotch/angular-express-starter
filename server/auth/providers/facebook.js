@@ -35,7 +35,7 @@ router.post('/', function(req, res) {
       if (req.headers.authorization) {
         User.findOne({ facebook: profile.id }, function(err, existingUser) {
           if (existingUser) {
-            return res.status(409).send({ message: 'There is already a Facebook account that belongs to you' });
+            return res.status(409).send({ message: 'This Facebook account is already linked to another account.' });
           }
           var token = req.headers.authorization.split(' ')[1];
           var payload = jwt.decode(token, config.TOKEN_SECRET);
@@ -46,6 +46,7 @@ router.post('/', function(req, res) {
             user.facebook = profile.id;
             user.picture = user.picture || 'https://graph.facebook.com/v2.3/' + profile.id + '/picture?type=large';
             user.displayName = user.displayName || profile.name;
+            user.email = user.email || profile.email;
             user.save(function() {
               var token = auth.createToken(user);
               res.send({ token: token });
@@ -63,6 +64,7 @@ router.post('/', function(req, res) {
           user.facebook = profile.id;
           user.picture = 'https://graph.facebook.com/' + profile.id + '/picture?type=large';
           user.displayName = profile.name;
+          user.email = profile.email;
           user.save(function() {
             var token = auth.createToken(user);
             res.send({ token: token });

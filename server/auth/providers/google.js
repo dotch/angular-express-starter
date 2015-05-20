@@ -34,7 +34,7 @@ router.post('/', function(req, res) {
       if (req.headers.authorization) {
         User.findOne({ google: profile.sub }, function(err, existingUser) {
           if (existingUser) {
-            return res.status(409).send({ message: 'There is already a Google account that belongs to you' });
+            return res.status(409).send({ message: 'This Google account is already linked to another account.' });
           }
           var token = req.headers.authorization.split(' ')[1];
           var payload = jwt.decode(token, config.TOKEN_SECRET);
@@ -45,6 +45,7 @@ router.post('/', function(req, res) {
             user.google = profile.sub;
             user.picture = user.picture || profile.picture.replace('sz=50', 'sz=200');
             user.displayName = user.displayName || profile.name;
+            user.email = user.email || profile.email;
             user.save(function() {
               var token = auth.createToken(user);
               res.send({ token: token });
@@ -61,6 +62,7 @@ router.post('/', function(req, res) {
           user.google = profile.sub;
           user.picture = profile.picture.replace('sz=50', 'sz=200');
           user.displayName = profile.name;
+          user.email = profile.email;
           user.save(function(err) {
             var token = auth.createToken(user);
             res.send({ token: token });

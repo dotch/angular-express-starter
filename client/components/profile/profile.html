@@ -35,11 +35,11 @@
       <form method="post" ng-submit="changePassword()">
         <md-input-container>
           <label>Old Password</label>
-          <input ng-model="oldPassword">
+          <input ng-model="oldPassword" type="password">
         </md-input-container>
         <md-input-container>
           <label>New Password</label>
-          <input ng-model="newPassword">
+          <input ng-model="newPassword" type="password">
         </md-input-container>
         <md-button class="btn-primary">Change Password</md-button>
       </form>
@@ -66,12 +66,6 @@
         </md-button>
         <md-button flex class="md-primary" ng-if="!user.google" ng-click="link('google')">
           <i class="ion-social-googleplus"></i> Link Google Account
-        </md-button>
-        <md-button flex class="md-warn" ng-if="user.twitter" ng-click="unlink('twitter')">
-          <i class="ion-social-twitter"></i> Unlink Twitter Account
-        </md-button>
-        <md-button flex class="md-primary" ng-if="!user.twitter" ng-click="link('twitter')">
-          <i class="ion-social-twitter"></i> Link Twitter Account
         </md-button>
       </div>
     </md-content>
