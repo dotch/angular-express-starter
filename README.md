@@ -1,6 +1,6 @@
 # Angular Express Starter
 
-Work in progress.
+A simple yet full-featured starting point for Angular+Express apps.
 
 ## Features
 
