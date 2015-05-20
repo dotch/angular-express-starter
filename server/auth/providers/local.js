@@ -36,7 +36,8 @@ router.post('/signup', function(req, res) {
     var user = new User({
       displayName: req.body.displayName,
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      providers: ['local']
     });
     user.save(function() {
       res.send({ token: auth.createToken(user) });

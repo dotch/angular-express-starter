@@ -47,6 +47,9 @@ router.post('/', function(req, res) {
             user.picture = user.picture || 'https://graph.facebook.com/v2.3/' + profile.id + '/picture?type=large';
             user.displayName = user.displayName || profile.name;
             user.email = user.email || profile.email;
+            if (user.providers.indexOf('facebook') === -1) {
+              user.providers.push('facebook');
+            }
             user.save(function() {
               var token = auth.createToken(user);
               res.send({ token: token });
@@ -65,6 +68,7 @@ router.post('/', function(req, res) {
           user.picture = 'https://graph.facebook.com/' + profile.id + '/picture?type=large';
           user.displayName = profile.name;
           user.email = profile.email;
+          user.providers = ['facebook'];
           user.save(function() {
             var token = auth.createToken(user);
             res.send({ token: token });

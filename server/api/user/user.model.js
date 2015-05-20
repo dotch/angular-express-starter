@@ -8,7 +8,8 @@ var userSchema = new mongoose.Schema({
   picture: String,
   facebook: String,
   google: String,
-  twitter: String
+  twitter: String,
+  providers: []
 });
 
 userSchema.pre('save', function(next) {

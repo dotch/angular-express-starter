@@ -46,6 +46,9 @@ router.post('/', function(req, res) {
             user.picture = user.picture || profile.picture.replace('sz=50', 'sz=200');
             user.displayName = user.displayName || profile.name;
             user.email = user.email || profile.email;
+            if (user.providers.indexOf('google') === -1) {
+              user.providers.push('google');
+            }
             user.save(function() {
               var token = auth.createToken(user);
               res.send({ token: token });
@@ -63,6 +66,7 @@ router.post('/', function(req, res) {
           user.picture = profile.picture.replace('sz=50', 'sz=200');
           user.displayName = profile.name;
           user.email = profile.email;
+          user.providers = ['facebook'];
           user.save(function(err) {
             var token = auth.createToken(user);
             res.send({ token: token });
