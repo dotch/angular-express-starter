@@ -12,8 +12,10 @@ Work in progress.
     * Change profile details
     * Link local and OAuth strategies to one account
     * Delete Account
+
 ### Structure
 * Simple project structure
+
 ### Design
 * Material Design using Angular Material
 
@@ -43,7 +45,7 @@ npm start
 ```
 
 ### TODO:
-[ ] use nodemailer
-[ ] implement account deletion
-[ ] switch to component router
-[ ] introduce gulp when necessary
+* [ ] use nodemailer
+* [ ] implement account deletion
+* [ ] switch to component router
+* [ ] introduce gulp when necessary
