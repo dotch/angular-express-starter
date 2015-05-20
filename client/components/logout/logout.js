@@ -1,7 +1,7 @@
 angular.module('myApp.logout', [])
   .controller('LogoutController', function($auth, $mdToast) {
     if (!$auth.isAuthenticated()) {
-        return;
+      return;
     }
     $auth.logout()
       .then(function() {

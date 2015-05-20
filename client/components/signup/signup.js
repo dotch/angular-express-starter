@@ -23,6 +23,7 @@ angular.module('myApp.signup', [])
           .hideDelay(3000)
       );
     }
+
     function loginErrorHandler(response) {
       if (typeof response.data.message === 'object') {
         angular.forEach(response.data.message, function(message) {
