@@ -6,6 +6,10 @@ var config = require('../../config');
 var auth = require('../auth.service');
 var User = require('../../api/user/user.model');
 
+function validationError(res, err) {
+  res.status(422).json(err);
+}
+
 /*
  |--------------------------------------------------------------------------
  | Login with Google
@@ -49,7 +53,10 @@ router.post('/', function(req, res) {
             if (user.providers.indexOf('google') === -1) {
               user.providers.push('google');
             }
-            user.save(function() {
+            user.save(function(err) {
+              if (err) {
+                validationError(res, err);
+              }
               var token = auth.createToken(user);
               res.send({ token: token });
             });
@@ -68,6 +75,9 @@ router.post('/', function(req, res) {
           user.email = profile.email;
           user.providers = ['facebook'];
           user.save(function(err) {
+            if (err) {
+              validationError(res, err);
+            }
             var token = auth.createToken(user);
             res.send({ token: token });
           });

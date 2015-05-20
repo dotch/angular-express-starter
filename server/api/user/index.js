@@ -4,6 +4,10 @@ var router = express.Router();
 var auth = require('../../auth/auth.service');
 var User = require('./user.model');
 
+function validationError(res, err) {
+  res.status(422).json(err);
+}
+
 router.get('/me', auth.ensureAuthenticated, function(req, res) {
   User.findById(req.user, function(err, user) {
     res.send(user);
@@ -30,6 +34,9 @@ router.put('/me', auth.ensureAuthenticated, function(req, res) {
           return res.status(401).send({ message: 'Wrong password' });
         }
         user.save(function(err) {
+          if (err) {
+            validationError(res, err);
+          }
           res.status(200).end();
         });
       });
@@ -38,6 +45,9 @@ router.put('/me', auth.ensureAuthenticated, function(req, res) {
         user.providers.push('local');
       }
       user.save(function(err) {
+        if (err) {
+          validationError(res, err);
+        }
         res.status(200).end();
       });
     }
