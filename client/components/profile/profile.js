@@ -18,27 +18,20 @@ angular.module('myApp.profile', [])
      * Update user's profile information.
      */
     $scope.updateProfile = function() {
+      console.log($scope);
       Account.updateProfile({
         displayName: $scope.user.displayName,
-        email: $scope.user.email
-      }).then(function() {
-        showDefaultToast('Profile has been updated');
-      });
-    };
-
-    /**
-     * Update user's password.
-     */
-    $scope.changePassword = function() {
-      Account.changePassword({
-        oldPassword: $scope.oldPassword,
-        newPassword: $scope.newPassword
+        email: $scope.user.email,
+        newPassword: $scope.user.newPassword,
+        oldPassword: $scope.user.oldPassword
       })
       .then(function() {
-        showDefaultToast('Password has been changed');
+        showDefaultToast('Profile has been updated');
+        $scope.getProfile();
       })
       .catch(function(response) {
-        showDefaultToast(response.data ? response.data.message : 'Could not change password');
+        showDefaultToast(response.data.message);
+        $scope.getProfile();
       });
     };
 

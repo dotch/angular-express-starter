@@ -6,9 +6,6 @@ angular.module('myApp.services', [])
       },
       updateProfile: function(profileData) {
         return $http.put('/api/users/me', profileData);
-      },
-      changePassword: function(passwordData) {
-        return $http.post('/api/users/me/password', passwordData);
       }
     };
   });

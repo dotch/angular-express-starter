@@ -17,14 +17,6 @@
   border: 1px solid #dce0e0;
 }
 
-[class^='ion-'] {
-  font-size: 1.2em;
-}
-
-.has-feedback .form-control {
-  padding-left: 42.5px;
-}
-
 .profile-picture {
   height: 100px;
   display: block;
