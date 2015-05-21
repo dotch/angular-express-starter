@@ -20,7 +20,7 @@ function ensureAuthenticated(req, res, next) {
   next();
 }
 
-function createToken(user) {
+function createJWT(user) {
   var payload = {
     sub: user._id,
     iat: moment().unix(),
@@ -30,4 +30,4 @@ function createToken(user) {
 }
 
 module.exports.ensureAuthenticated = ensureAuthenticated;
-module.exports.createToken = createToken;
+module.exports.createJWT = createJWT;

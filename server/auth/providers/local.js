@@ -18,7 +18,7 @@ router.post('/login', function(req, res) {
       if (!isMatch) {
         return res.status(401).send({ message: 'Wrong email and/or password' });
       }
-      res.send({ token: auth.createToken(user) });
+      res.send({ token: auth.createJWT(user) });
     });
   });
 });
@@ -40,7 +40,7 @@ router.post('/signup', function(req, res) {
       providers: ['local']
     });
     user.save(function() {
-      res.send({ token: auth.createToken(user) });
+      res.send({ token: auth.createJWT(user) });
     });
   });
 });
