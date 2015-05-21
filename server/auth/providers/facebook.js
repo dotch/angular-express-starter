@@ -58,7 +58,7 @@ router.post('/', function(req, res) {
               if (err) {
                 validationError(res, err);
               }
-              var token = auth.createToken(user);
+              var token = auth.createJWT(user);
               res.send({ token: token });
             });
           });
@@ -67,7 +67,7 @@ router.post('/', function(req, res) {
         // Step 3b. Create a new user account or return an existing one.
         User.findOne({ facebook: profile.id }, function(err, existingUser) {
           if (existingUser) {
-            var token = auth.createToken(existingUser);
+            var token = auth.createJWT(existingUser);
             return res.send({ token: token });
           }
           var user = new User();
@@ -80,7 +80,7 @@ router.post('/', function(req, res) {
             if (err) {
               validationError(res, err);
             }
-            var token = auth.createToken(user);
+            var token = auth.createJWT(user);
             res.send({ token: token });
           });
         });
