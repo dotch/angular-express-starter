@@ -56,7 +56,7 @@ router.post('/', function(req, res) {
             }
             user.save(function(err) {
               if (err) {
-                validationError(res, err);
+                return validationError(res, err);
               }
               var token = auth.createJWT(user);
               res.send({ token: token });
@@ -78,7 +78,8 @@ router.post('/', function(req, res) {
           user.providers = ['facebook'];
           user.save(function(err) {
             if (err) {
-              validationError(res, err);
+              // could not save the user, maybe email is already taken.
+              return validationError(res, err);
             }
             var token = auth.createJWT(user);
             res.send({ token: token });
