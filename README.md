@@ -24,7 +24,7 @@ A simple yet full-featured starting point for Angular+Express applications.
 * **Nodemailer** - Send verification and lost password Emails
 
 ## Demo
-[see it live](https://nodejs-dotch.rhcloud.com/#/)
+[see it live](https://angular-express-starter.herokuapp.com/)
 
 ## How to use
 
