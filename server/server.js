@@ -1,13 +1,9 @@
 var path = require('path');
-var async = require('async');
 var bodyParser = require('body-parser');
 var express = require('express');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-var request = require('request');
 var config = require('./config');
-var auth = require('./auth/auth.service');
-var User = require('./api/user/user.model');
 
 mongoose.connect(config.MONGO_URI);
 mongoose.connection.on('error', function() {
@@ -16,8 +12,7 @@ mongoose.connection.on('error', function() {
 
 var app = express();
 
-app.set('port', process.env.OPENSHIFT_NODEJS_PORT || process.env.PORT || 3000);
-app.set('ip', process.env.OPENSHIFT_NODEJS_IP || process.env.IP || undefined);
+app.set('port', process.env.PORT || 3000);
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -27,6 +22,6 @@ app.use(express.static(path.join(__dirname, '../client')));
 
 require('./routes')(app);
 
-app.listen(app.get('port'), app.get('ip'), function() {
+app.listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
 });
