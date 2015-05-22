@@ -73,7 +73,7 @@ router.post('/', function(req, res) {
           user.picture = profile.picture.replace('sz=50', 'sz=200');
           user.displayName = profile.name;
           user.email = profile.email;
-          user.providers = ['facebook'];
+          user.providers = ['google'];
           user.save(function(err) {
             if (err) {
               // could not save the user, maybe email is already taken.
