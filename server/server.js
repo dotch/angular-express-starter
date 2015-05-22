@@ -18,10 +18,13 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// serve the static client files
 app.use(express.static(path.join(__dirname, '../client')));
 
+// set up the routes
 require('./routes')(app);
 
+// start the server
 app.listen(app.get('port'), function() {
   console.log('Express server listening on port ' + app.get('port'));
 });

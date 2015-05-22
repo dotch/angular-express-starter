@@ -11,10 +11,8 @@ function validationError(res, err) {
 }
 
 /*
- |--------------------------------------------------------------------------
- | Login with Facebook
- |--------------------------------------------------------------------------
- */
+* Login with Facebook
+* */
 router.post('/', function(req, res) {
   var accessTokenUrl = 'https://graph.facebook.com/v2.3/oauth/access_token';
   var graphApiUrl = 'https://graph.facebook.com/v2.3/me';

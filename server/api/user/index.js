@@ -8,12 +8,18 @@ function validationError(res, err) {
   res.status(422).json(err);
 }
 
+/*
+* Return a user's own profile
+* */
 router.get('/me', auth.ensureAuthenticated, function(req, res) {
   User.findById(req.user, function(err, user) {
     res.send(user);
   });
 });
 
+/*
+* Change profile fields (including password)
+* */
 router.put('/me', auth.ensureAuthenticated, function(req, res) {
   var oldPass = req.body.oldPassword ? String(req.body.oldPassword) : null;
   var newPass = req.body.newPassword ? String(req.body.newPassword) : null;

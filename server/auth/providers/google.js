@@ -11,10 +11,8 @@ function validationError(res, err) {
 }
 
 /*
- |--------------------------------------------------------------------------
- | Login with Google
- |--------------------------------------------------------------------------
- */
+* Login with Google
+* */
 router.post('/', function(req, res) {
   var accessTokenUrl = 'https://accounts.google.com/o/oauth2/token';
   var peopleApiUrl = 'https://www.googleapis.com/plus/v1/people/me/openIdConnect';
