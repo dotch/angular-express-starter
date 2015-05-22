@@ -43,7 +43,9 @@ npm start
 ...
 
 ### TODO:
-* [ ] use nodemailer
 * [ ] implement account deletion
-* [ ] switch to component router
+* [ ] switch to component router when ready
+* [ ] switch to angular2 when ready
 * [ ] introduce gulp when necessary or another build process
+* [ ] add some documentation
+* [ ] write a lot of tests
