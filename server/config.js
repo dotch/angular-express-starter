@@ -1,3 +1,11 @@
+/*
+* IMPORTANT
+* if you set you keys and credentials directly in this file
+* instead of using environment variables:
+* Remove this file from version control. (put it in .gitignore)
+* Otherwise people will be able to find your keys on Github.
+* */
+
 module.exports = {
 
   /*
@@ -29,4 +37,5 @@ module.exports = {
     user: process.env.SENDGRID_USER || 'Sendgrid Username',
     password: process.env.SENDGRID_PASSWORD || 'Sendgrid Password'
   }
+
 };
