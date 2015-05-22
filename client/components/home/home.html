@@ -1,21 +1,68 @@
-<md-content layout-margin layout="column" class="center-form">
+<section class="hero" layout="column" layout-align="center center">
+
+  <div class="hero-logo">
+    <h1 class="md-headline">Angular-Express-Starter</h1>
+    <div class="md-title">
+      A simple and full-featured starting point for Angular+Express applications.
+    </div>
+  </div>
+
+  <div class="hero-buttons">
+    <md-button class="md-raised md-primary" ng-href="https://github.com/dotch/angular-express-starter">
+      Github project
+    </md-button>
+    <md-button class="md-raised md-primary" ng-href="https://github.com/dotch/angular-express-starter/issues">
+      Report an issue
+    </md-button>
+  </div>
+
+</section>
+
+<md-content layout-margin layout="column" layout-gt-sm="row" >
 
   <section class="md-whiteframe-z1" flex>
     <md-toolbar class="mute-toolbar">
       <div class="md-toolbar-tools">
-        <h3>Angular Express Starter</h3>
+        <h3>Features</h3>
       </div>
     </md-toolbar>
-    <md-content layout-padding layput-margin layout="row">
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+    <md-content layout-padding>
+      <ul>
+        <li>JSON Web Token based Authentication</li>
+        <li>Local Authentication using Email and Password</li>
+        <li>OAuth 2.0 Authentication via Facebook and Google</li>
+        <li>Account Management:</li>
+          <ul>
+            <li>Change, forgot, reset Password</li>
+            <li>Change profile details</li>
+            <li>Link local and OAuth strategies to one account</li>
+            <li>Delete Account</li>
+          </ul>
+        <li>Material Design using Angular Material</li>
+        <li>Simple project structure</li>
+      </ul>
     </md-content>
   </section>
 
-  <md-content layout-padding>
-    <div layout="row" layout-margin>
-      <md-button flex ng-href="https://github.com/dotch/angular-express-starter">Github project</md-button>
-      <md-button flex ng-href="https://github.com/dotch/angular-express-starter/issues">Report issue</md-button>
-    </div>
-  </md-content>
-
+  <section class="md-whiteframe-z1" flex>
+    <md-toolbar class="mute-toolbar">
+      <div class="md-toolbar-tools">
+        <h3>Technologies</h3>
+      </div>
+    </md-toolbar>
+    <md-content layout-padding>
+      <ul>
+        <li>Mongo DB - NoSQL Database</li>
+        <li>Mongoose - MongoDB object modeling tool</li>
+        <li>Express - Web framework for Node.js</li>
+        <li>Angular - Client side JavaScript framework</li>
+        <li>Angular Component Router - New Angular router</li>
+        <li>Angular Material - Material Design UI Components for Angliar</li>
+        <li>Satellizer - JSON Web Token based Authentication</li>
+        <li>Nodemailer - Send password reset emails</li>
+      </ul>
+    </md-content>
+  </section>
 </md-content>
+
+

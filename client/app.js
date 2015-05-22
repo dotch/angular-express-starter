@@ -1,8 +1,8 @@
 angular.module('myApp', [
   'ngResource',
   'ngMessages',
-  'ui.router',
   'ngMaterial',
+  'ui.router',
   'satellizer',
 
   'myApp.signup',
@@ -16,7 +16,11 @@ angular.module('myApp', [
   'myApp.services',
   'myApp.directives'
 ])
-  .config(function($stateProvider, $urlRouterProvider, $authProvider) {
+  .config(function($stateProvider, $mdThemingProvider, $urlRouterProvider, $authProvider) {
+    $mdThemingProvider.theme('default')
+      .primaryPalette('blue')
+      .accentPalette('grey')
+
     $stateProvider
       .state('home', {
         url: '/',
