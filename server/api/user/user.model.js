@@ -9,7 +9,9 @@ var userSchema = new mongoose.Schema({
   facebook: String,
   google: String,
   twitter: String,
-  providers: []
+  providers: [],
+  resetPasswordToken: String,
+  resetPasswordTokenExpiration: Date
 });
 
 userSchema.pre('save', function(next) {

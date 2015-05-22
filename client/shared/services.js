@@ -8,4 +8,14 @@ angular.module('myApp.services', [])
         return $http.put('/api/users/me', profileData);
       }
     };
+  })
+  .factory('Password', function($http) {
+    return {
+      forgotPassword: function(emailData) {
+        return $http.post('/auth/forgot', emailData);
+      },
+      resetPassword: function(token, passwordData) {
+        return $http.post('/auth/reset/' + token, passwordData);
+      }
+    }
   });

@@ -1,0 +1,20 @@
+<md-content layout-margin class="center-form">
+  <section class="md-whiteframe-z1" flex>
+    <md-toolbar class="mute-toolbar">
+      <div class="md-toolbar-tools">
+        <h3>Forgot Password</h3>
+      </div>
+    </md-toolbar>
+    <form method="post" ng-submit="forgot()" name="forgotForm">
+      <md-content layou="column" layout-padding>
+          <div flex>
+            Enter your email and we'll send you a link to reset your password.
+          </div>
+          <md-input-container flex>
+            <label>Email</label>
+            <input ng-model="email" name="email" type="email" required autofocus>
+          </md-input-container>
+          <md-button flex type="submit" ng-disabled="forgotForm.$invalid" class="md-primary">Reset password</md-button>
+      </md-content>
+    </form>
+</md-content>

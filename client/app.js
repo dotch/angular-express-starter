@@ -8,6 +8,8 @@ angular.module('myApp', [
   'myApp.signup',
   'myApp.profile',
   'myApp.login',
+  'myApp.forgot',
+  'myApp.reset',
   'myApp.logout',
   'myApp.home',
 
@@ -35,6 +37,30 @@ angular.module('myApp', [
         url: '/logout',
         template: null,
         controller: 'LogoutController'
+      })
+      .state('password', {
+        abstract: true,
+        url: '/password',
+        template: '<ui-view/>'
+      })
+      .state('password.forgot', {
+        url: '/forgot',
+        templateUrl: 'components/password/forgot/forgot.html',
+        controller: 'ForgotController'
+      })
+      .state('password.reset', {
+        abstract: true,
+        url: '/reset',
+        template: '<ui-view/>'
+      })
+      .state('password.reset.invalid', {
+        url: '/invalid',
+        templateUrl: 'components/password/reset/invalid/reset-invalid.html'
+      })
+      .state('password.reset.form', {
+        url: '/:token',
+        templateUrl: 'components/password/reset/form/reset-form.html',
+        controller: 'ResetFormController'
       })
       .state('profile', {
         url: '/profile',

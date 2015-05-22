@@ -1,0 +1,26 @@
+<md-content layout-margin class="center-form">
+  <section class="md-whiteframe-z1" flex>
+    <md-toolbar class="mute-toolbar">
+      <div class="md-toolbar-tools">
+        <h3>Set new password</h3>
+      </div>
+    </md-toolbar>
+    <form method="post" ng-submit="reset()" name="resetForm">
+      <md-content layou="column" layout-padding>
+        <md-input-container flex>
+          <label>New Password</label>
+          <input ng-model="password" name="password" type="password" required autofocus>
+        </md-input-container>
+        <md-input-container flex>
+          <label>Confirm Password</label>
+          <input password-match="password" ng-model="confirmPassword" name="confirmPassword" type="password" required>
+          <div ng-messages="resetForm.confirmPassword.$error" ng-show="resetForm.confirmPassword.$touched || resetForm.$submitted">
+            <div ng-message="compareTo">Password must match.</div>
+            <div ng-message="required">Password confirmation is required.</div>
+          </div>
+        </md-input-container>
+        <md-button flex type="submit" ng-disabled="resetForm.$invalid" class="md-primary">Update password</md-button>
+      </md-content>
+    </form>
+  </section>
+</md-content>

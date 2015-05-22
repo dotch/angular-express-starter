@@ -18,7 +18,6 @@ angular.module('myApp.profile', [])
      * Update user's profile information.
      */
     $scope.updateProfile = function() {
-      console.log($scope);
       Account.updateProfile({
         displayName: $scope.user.displayName,
         email: $scope.user.email,
