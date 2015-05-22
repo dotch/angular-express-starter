@@ -16,6 +16,7 @@ A simple yet full-featured starting point for Angular+Express applications.
 
 ## Technologies used
 * **Mongo DB** - NoSQL Database
+* **Mongoose** - MongoDB object modeling tool
 * **Express** - Web framework for Node.js
 * **Angular** - Client side JavaScript framework
 * **Angular Component Router** - New Angular router (TODO)
