@@ -1,6 +1,6 @@
 # Angular Express Starter
 
-A simple yet full-featured starting point for Angular+Express applications.
+A simple yet full-featured starting point for Angular+Express applications with token based authentication.
 
 ## Features
 * JSON Web Token based Authentication
