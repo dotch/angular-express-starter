@@ -1,4 +1,13 @@
 angular.module('myApp.signup', [])
+
+  .config( function( $stateProvider) {
+    $stateProvider.state('signup', {
+      url: '/signup',
+      templateUrl: 'components/signup/signup.html',
+      controller: 'SignupController'
+    })
+  })
+
   .controller('SignupController', function($scope, $mdToast, $auth) {
 
     $scope.authenticate = function(provider) {

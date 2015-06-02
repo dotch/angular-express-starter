@@ -9,11 +9,11 @@
     <link href="favicon.png" rel="shortcut icon">
     <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
-    <link href="stylesheets/styles.css" rel="stylesheet">
+    <link href="styles/styles.css" rel="stylesheet">
   </head>
 
   <body layout="column">
-    <md-toolbar ng-controller="NavbarCtrl" class="md-whiteframe-z2">
+    <md-toolbar ng-controller="NavbarController" class="md-whiteframe-z2">
       <div class="md-toolbar-tools" layout-margin layout-padding>
         <a href="/#/" md-button>MEAN Essential</a>
         <div flex>
@@ -38,13 +38,13 @@
 
     <!-- Application Code -->
     <script src="app.js"></script>
-    <script src="shared/directives.js"></script>
-    <script src="shared/services.js"></script>
+    <script src="shared/password-match/password-match.js"></script>
     <script src="shared/navbar/navbar.js"></script>
     <script src="components/home/home.js"></script>
     <script src="components/login/login.js"></script>
+    <script src="components/password/password.js"></script>
     <script src="components/password/forgot/forgot.js"></script>
-    <script src="components/password/reset/form/reset-form.js"></script>
+    <script src="components/password/reset/reset.js"></script>
     <script src="components/signup/signup.js"></script>
     <script src="components/logout/logout.js"></script>
     <script src="components/profile/profile.js"></script>

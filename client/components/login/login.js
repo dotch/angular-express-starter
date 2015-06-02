@@ -1,4 +1,13 @@
 angular.module('myApp.login', [])
+
+  .config( function( $stateProvider) {
+    $stateProvider.state('login', {
+      url: '/login',
+      templateUrl: 'components/login/login.html',
+      controller: 'LoginController'
+    })
+  })
+
   .controller('LoginController', function($scope, $mdToast, $auth) {
     $scope.login = function() {
       $auth.login({ email: $scope.email, password: $scope.password })

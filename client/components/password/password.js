@@ -1,14 +1,16 @@
-angular.module('myApp.services', [])
-  .factory('Account', function($http) {
-    return {
-      getProfile: function() {
-        return $http.get('/api/users/me');
-      },
-      updateProfile: function(profileData) {
-        return $http.put('/api/users/me', profileData);
-      }
-    };
+angular.module('myApp.password', [
+  'myApp.password.forgot',
+  'myApp.password.reset'
+])
+
+  .config( function( $stateProvider) {
+    $stateProvider.state('password', {
+      abstract: true,
+      url: '/password',
+      template: '<ui-view/>'
+    })
   })
+
   .factory('Password', function($http) {
     return {
       forgotPassword: function(emailData) {

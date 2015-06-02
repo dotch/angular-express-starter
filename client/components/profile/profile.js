@@ -1,4 +1,37 @@
 angular.module('myApp.profile', [])
+
+  .config( function( $stateProvider) {
+    $stateProvider.state('profile', {
+      url: '/profile',
+      templateUrl: 'components/profile/profile.html',
+      controller: 'ProfileController',
+      resolve: {
+        authenticated: function($q, $location, $auth) {
+          var deferred = $q.defer();
+
+          if (!$auth.isAuthenticated()) {
+            $location.path('/login');
+          } else {
+            deferred.resolve();
+          }
+
+          return deferred.promise;
+        }
+      }
+    });
+  })
+
+  .factory('Account', function($http) {
+    return {
+      getProfile: function() {
+        return $http.get('/api/users/me');
+      },
+      updateProfile: function(profileData) {
+        return $http.put('/api/users/me', profileData);
+      }
+    };
+  })
+
   .controller('ProfileController', function($scope, $auth, $mdToast, Account) {
 
     /**

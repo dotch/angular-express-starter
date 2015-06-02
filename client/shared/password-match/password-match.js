@@ -1,4 +1,4 @@
-angular.module('myApp.directives', [])
+angular.module('myApp.passwordMatch', [])
   .directive('passwordMatch', function() {
     return {
       require: 'ngModel',

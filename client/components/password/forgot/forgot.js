@@ -1,4 +1,13 @@
-angular.module('myApp.forgot', [])
+angular.module('myApp.password.forgot', [])
+
+  .config( function( $stateProvider) {
+    $stateProvider  .state('password.forgot', {
+      url: '/forgot',
+      templateUrl: 'components/password/forgot/forgot.html',
+      controller: 'ForgotController'
+    })
+  })
+
   .controller('ForgotController', function($scope, $mdToast, Password) {
     $scope.forgot = function() {
       Password.forgotPassword({ 'email': $scope.email })

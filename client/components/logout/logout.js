@@ -1,4 +1,13 @@
 angular.module('myApp.logout', [])
+
+  .config( function( $stateProvider) {
+    $stateProvider.state('logout', {
+      url: '/logout',
+      template: null,
+      controller: 'LogoutController'
+    })
+  })
+
   .controller('LogoutController', function($auth, $mdToast) {
     if (!$auth.isAuthenticated()) {
       return;
