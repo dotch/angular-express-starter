@@ -1,10 +1,13 @@
 <md-content layout-margin class="center-form">
+
   <section class="md-whiteframe-z1" flex>
+
     <md-toolbar class="mute-toolbar">
       <div class="md-toolbar-tools">
         <h3>Log in</h3>
       </div>
     </md-toolbar>
+
     <md-content layout="column" layout-gt-sm="row" layout-padding>
       <div layout="column" flex>
         <button class="md-button btn-facebook" ng-click="authenticate('facebook')">
@@ -33,9 +36,14 @@
         </form>
       </div>
     </md-content>
+
     <md-divider></md-divider>
+
     <div layout="column" layout-align="center center">
-      <a href="/#/password/forgot">Forgot your password?</a>
-      <small>Don't have an account yet? <a href="/#/signup">Sign up</a></small>
+      <a ui-sref="password.forgot">Forgot your password?</a>
+      <small>Don't have an account yet? <a ui-sref="signup">Sign up</a></small>
     </div>
+
+  </section>
+
 </md-content>

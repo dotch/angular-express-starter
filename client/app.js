@@ -14,8 +14,8 @@ angular.module('myApp', [
   'myApp.password',
   'myApp.logout',
   'myApp.home'
-
 ])
+
   .config(function($stateProvider, $mdThemingProvider, $urlRouterProvider, $authProvider) {
     $mdThemingProvider.theme('default')
       .primaryPalette('blue')

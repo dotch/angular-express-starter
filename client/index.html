@@ -15,13 +15,13 @@
   <body layout="column">
     <md-toolbar ng-controller="NavbarController" class="md-whiteframe-z2">
       <div class="md-toolbar-tools" layout-margin layout-padding>
-        <a href="/#/" md-button>MEAN Essential</a>
+        <a ui-sref="home" md-button>MEAN Essential</a>
         <div flex>
-          <a href="/#/profile" md-button ng-if="isAuthenticated()">Profile</a>
+          <a ui-sref="profile" md-button ng-if="isAuthenticated()">Profile</a>
         </div>
-        <a href="/#/login" md-button ng-if="!isAuthenticated()">Login</a>
-        <a href="/#/signup" md-button ng-if="!isAuthenticated()">Sign up</a>
-        <a href="/#/logout" md-button ng-if="isAuthenticated()">Logout</a>
+        <a ui-sref="login" md-button ng-if="!isAuthenticated()">Log In</a>
+        <a ui-sref="signup" md-button ng-if="!isAuthenticated()">Sign up</a>
+        <a ui-sref="logout" md-button ng-if="isAuthenticated()">Logout</a>
       </div>
     </md-toolbar>
     <div ui-view></div>
