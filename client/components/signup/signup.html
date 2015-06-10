@@ -11,10 +11,10 @@
     <md-content layout="column" layout-gt-sm="row" layout-padding>
       <div layout="column" flex>
         <button class="md-button btn-facebook" ng-click="authenticate('facebook')">
-          <i class="ion-social-facebook"></i> Sign up with Facebook
+          <md-icon md-svg-src="images/social-facebook.svg" class=" login-icon"></md-icon> Sign up with Facebook
         </button>
         <button class="md-button btn-google-plus" ng-click="authenticate('google')">
-          <span class="ion-social-googleplus"></span>Sign up with Google
+          <md-icon md-svg-src="images/social-google.svg" class=" login-icon"></md-icon> Sign up with Google
         </button>
       </div>
       <div class="signup-seperator" layout="row" layout-gt-sm="column" layout-align="center center">
@@ -24,30 +24,34 @@
       </div>
       <div flex layout="column" layout-padding layout-margin>
         <form method="post" ng-submit="signup()" name="signupForm" layout="column">
-          <md-input-container>
+          <md-input-container class="md-icon-float">
             <label>Name</label>
+            <md-icon>person</md-icon>
             <input ng-model="displayName" name="displayName" required autofocus>
             <div ng-messages="signupForm.displayName.$error" ng-show="signupForm.displayName.$touched || signupForm.$submitted">
               <div ng-message="required">You must enter your name.</div>
             </div>
           </md-input-container>
-          <md-input-container>
+          <md-input-container class="md-icon-float">
             <label>Email</label>
+            <md-icon>email</md-icon>
             <input ng-model="email" name="email" type="email" ng-pattern="/^[A-z]+[a-z0-9._]+@[a-z]+.[a-z.]{2,5}$/" required>
             <div ng-messages="signupForm.email.$error" ng-show="signupForm.email.$touched || signupForm.$submitted">
               <div ng-message="required">Your email adress is required.</div>
               <div ng-message="pattern">Your email adress is invalid.</div>
             </div>
           </md-input-container>
-          <md-input-container>
+          <md-input-container class="md-icon-float">
             <label>Password</label>
+            <md-icon>lock</md-icon>
             <input ng-model="password" name="password" type="password" required>
             <div ng-messages="signupForm.password.$error" ng-show="signupForm.password.$touched || signupForm.$submitted">
               <div ng-message="required">Password is required.</div>
             </div>
           </md-input-container>
-          <md-input-container>
+          <md-input-container class="md-icon-float">
             <label>Confirm Password</label>
+            <md-icon></md-icon>
             <input password-match="password" ng-model="confirmPassword" name="confirmPassword" type="password" required>
             <div ng-messages="signupForm.confirmPassword.$error" ng-show="signupForm.confirmPassword.$touched || signupForm.$submitted">
               <div ng-message="compareTo">Password must match.</div>

@@ -10,16 +10,19 @@
         <img class="profile-picture" ng-src="{{user.picture || 'http://placehold.it/100x100'}}">
       </div>
       <form flex method="post" name="profileForm" ng-submit="updateProfile()">
-        <md-input-container>
+        <md-input-container class="md-icon-float">
           <label>Name</label>
+          <md-icon>person</md-icon>
           <input ng-model="user.displayName">
         </md-input-container>
-        <md-input-container>
+        <md-input-container class="md-icon-float">
           <label>Email Address</label>
+          <md-icon>email</md-icon>
           <input ng-model="user.email" type="email">
         </md-input-container>
-        <md-input-container>
+        <md-input-container class="md-icon-float">
           <label>New Password</label>
+          <md-icon>lock</md-icon>
           <input ng-model="user.newPassword" type="password">
         </md-input-container>
         <div layout="row">
@@ -38,16 +41,16 @@
   <md-content layout-padding>
     <div layout="row" layout-margin>
       <md-button flex class="md-warn" ng-if="user.facebook" ng-click="unlink('facebook')">
-        <i class="ion-social-facebook"></i> Unlink Facebook Account
+        <md-icon md-svg-src="images/social-facebook.svg" class=" login-icon"></md-icon> Unlink Facebook Account
       </md-button>
       <md-button flex class="md-primary" ng-if="!user.facebook" ng-click="link('facebook')">
-        <i class="ion-social-facebook"></i> Link Facebook Account
+        <md-icon md-svg-src="images/social-facebook.svg" class=" login-icon"></md-icon> Link Facebook Account
       </md-button>
       <md-button flex class="md-warn" ng-if="user.google" ng-click="unlink('google')">
-        <i class="ion-social-googleplus"></i> Unlink Google Account
+        <md-icon md-svg-src="images/social-google.svg" class=" login-icon"></md-icon> Unlink Google Account
       </md-button>
       <md-button flex class="md-primary" ng-if="!user.google" ng-click="link('google')">
-        <i class="ion-social-googleplus"></i> Link Google Account
+        <md-icon md-svg-src="images/social-google.svg" class=" login-icon"></md-icon> Link Google Account
       </md-button>
     </div>
   </md-content>

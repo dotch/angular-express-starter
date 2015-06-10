@@ -44,6 +44,12 @@
 * Social Buttons
 *********************/
 
+.login-icon {
+    color: white;
+    width: 18px;
+    height: 18px;
+}
+
 .btn-google-plus {
     color: #fff;
     background-color: #dd4b39;

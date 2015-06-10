@@ -21,6 +21,6 @@
     "angular-ui-router": "~0.2.14",
     "angular": "~1.4",
     "satellizer": "~0.11",
-    "angular-material": "~0.9.7"
+    "angular-material": "~0.9.8"
   }
 }
