@@ -1,16 +1,16 @@
 {
   "name": "mean",
   "dependencies": {
-    "async": "^1.2.1",
-    "bcryptjs": "^2.1.0",
-    "body-parser": "^1.12.4",
-    "express": "^4.12.4",
-    "jwt-simple": "^0.3.0",
-    "moment": "^2.10.3",
-    "mongoose": "^4.0.5",
-    "morgan": "^1.5.3",
-    "nodemailer": "^1.3.4",
-    "request": "^2.57.0"
+    "async": "^1.5.2",
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "jwt-simple": "^0.5.0",
+    "moment": "^2.12.0",
+    "mongoose": "^4.4.7",
+    "morgan": "^1.7.0",
+    "nodemailer": "^2.3.0",
+    "request": "^2.69.0"
   },
   "scripts": {
     "start": "node server/server.js"
