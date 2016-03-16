@@ -3,6 +3,8 @@ var bodyParser = require('body-parser');
 var express = require('express');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+var cors = require('cors')
+
 var config = require('./config');
 
 mongoose.connect(config.MONGO_URI);
@@ -14,6 +16,7 @@ var app = express();
 
 app.set('port', process.env.PORT || 3000);
 
+app.use(cors());
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

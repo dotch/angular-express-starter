@@ -4,6 +4,7 @@
     "async": "^1.5.2",
     "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.0",
+    "cors": "^2.7.1",
     "express": "^4.13.4",
     "jwt-simple": "^0.5.0",
     "moment": "^2.12.0",
